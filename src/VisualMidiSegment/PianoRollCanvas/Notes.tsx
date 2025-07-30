@@ -9,6 +9,7 @@ import { colorToVec4 } from "../gl/color"
 import Color from "color"
 import type { Rect } from "../entities/geometry/IRect"
 import type { INoteData } from "./shaders/NoteShader"
+import type { PianoNoteItem } from "../extras/types"
 // import { LegacyNotes } from "./lagacy/LegacyNotes"
 
 export interface NotesProps {
@@ -21,22 +22,22 @@ export const Notes: FC<NotesProps> = (props) => {
 
 const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
   // const { notes, selectedTrackId } = usePianoRoll();
-  const notes: Array<Rect & INoteData> = [
+  const notes: Array<PianoNoteItem> = [
     {
-        "x": 10,
-        "y": 10,
+        "x": 0,
+        "y": 0,
         "width": 24,
         "height": 12,
-        // "id": 20,
+        "id": 20,
         "velocity": 100,
         "isSelected": false
     },
     {
-        "x": 408,
-        "y": 852,
+        "x": 12,
+        "y": 15,
         "width": 24,
         "height": 12,
-        // "id": 19,
+        "id": 19,
         "velocity": 100,
         "isSelected": false
     },
@@ -45,7 +46,7 @@ const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
         "y": 744,
         "width": 24,
         "height": 12,
-        // "id": 18,
+        "id": 18,
         "velocity": 100,
         "isSelected": false
     },
@@ -54,7 +55,7 @@ const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
         "y": 948,
         "width": 24,
         "height": 12,
-        // "id": 21,
+        "id": 21,
         "velocity": 100,
         "isSelected": false
     },
@@ -63,7 +64,7 @@ const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
         "y": 816,
         "width": 24,
         "height": 12,
-        // "id": 22,
+        "id": 22,
         "velocity": 100,
         "isSelected": true
     }

@@ -83,6 +83,7 @@ export const PianoRollCanvas: FC<{ width: number, height: number }> = ({ width, 
         width={width}
         height={height}
         style={{
+          border: "1px solid red"
           // cursor: notesCursor,
           // background: theme.pianoWhiteKeyLaneColor,
         }}
