@@ -1,9 +1,12 @@
-//pieces of code from 
-import { NoteCoordTransform } from "../signalFamilyCommon/transform/NoteCoordTransform"
+//pieces of code from PianoRollStore
+import { NoteCoordTransform } from "../signalFamilyCommon/entities/transform/NoteCoordTransform"
 import type { NoteEvent } from "../signalFamilyCommon/track/TrackEvent"
-import { TickTransform } from "../signalFamilyCommon/transform/TickTransform";
+import { TickTransform } from "../signalFamilyCommon/entities/transform/TickTransform";
 import { Layout } from "../signalFamilyCommon/Constants";
-import { KeyTransform } from "../signalFamilyCommon/transform/KeyTransform";
+import { KeyTransform } from "../signalFamilyCommon/entities/transform/KeyTransform";
+import { isNoteEvent, type TrackId } from "../signalFamilyCommon/track";
+
+import Song from "../signalFamilyCommon/song/Song";
 
 function getTickScrollStoreTransform() {
   const scaleX = 1;
@@ -22,11 +25,18 @@ function getTransform() {
       getKeyScrollStoreTransform(),
     )
 }
+function getTrack(song: Song) {
+  // const song = new Song();
+  console.log(song);
+  const track = song.getTrack(1 as TrackId);
+  if(!track) throw new Error;
+  return track;
+}
 
-function getAllNoteBounds() {
+function getAllNoteBounds(song: Song) {
     // const { transform, selectedTrack: track } = this
     const transform = getTransform();
-
+    const track = getTrack(song);
 
     const noteEvents = track.events.filter(isNoteEvent)
     const getRect = track.isRhythmTrack
@@ -41,9 +51,9 @@ function getAllNoteBounds() {
       }
     })
 }
-export function DomainToView(song: any) { //TODO: song type is SerializeObjectProperties<Song> see serializr
+export function domainToView(song: Song) { //TODO: song type is SerializeObjectProperties<Song> see serializr
     // const { allNoteBounds } = 
-    const allNoteBounds = getAllNoteBounds();
+    const allNoteBounds = getAllNoteBounds(song);
     console.log("allNoteBounds=", allNoteBounds);
 
     // const { canvasWidth, scrollLeft } = this.tickScrollStore
@@ -62,4 +72,13 @@ export function DomainToView(song: any) { //TODO: song type is SerializeObjectPr
     //       isSelected,
     //     }
     //   })
+
+    return allNoteBounds.map((n) => {
+      return {
+        ...n.bounds,
+        id: n.note.id,
+        velocity: n.note.velocity,
+        isSelected: false,
+      }
+    })
 }

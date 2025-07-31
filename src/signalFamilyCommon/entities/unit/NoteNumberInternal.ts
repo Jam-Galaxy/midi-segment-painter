@@ -1,4 +1,4 @@
-import { MaxNoteNumber } from "../Constants";
+import { MaxNoteNumber } from "../../Constants";
 
 export const clamp = (noteNumber: number) =>
   Math.min(MaxNoteNumber, Math.max(0, noteNumber))

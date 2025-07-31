@@ -10,6 +10,7 @@ import Color from "color"
 import type { Rect } from "../entities/geometry/IRect"
 import type { INoteData } from "./shaders/NoteShader"
 import type { PianoNoteItem } from "../extras/types"
+import { domainToViewSongTest } from "../DomainToViewSongTest"
 // import { LegacyNotes } from "./lagacy/LegacyNotes"
 
 export interface NotesProps {
@@ -21,54 +22,12 @@ export const Notes: FC<NotesProps> = (props) => {
 }
 
 const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
+
+
+  const notes = domainToViewSongTest();
+
   // const { notes, selectedTrackId } = usePianoRoll();
-  const notes: Array<PianoNoteItem> = [
-    {
-        "x": 0,
-        "y": 0,
-        "width": 24,
-        "height": 12,
-        "id": 20,
-        "velocity": 100,
-        "isSelected": false
-    },
-    {
-        "x": 12,
-        "y": 15,
-        "width": 24,
-        "height": 12,
-        "id": 19,
-        "velocity": 100,
-        "isSelected": false
-    },
-    {
-        "x": 600,
-        "y": 744,
-        "width": 24,
-        "height": 12,
-        "id": 18,
-        "velocity": 100,
-        "isSelected": false
-    },
-    {
-        "x": 840,
-        "y": 948,
-        "width": 24,
-        "height": 12,
-        "id": 21,
-        "velocity": 100,
-        "isSelected": false
-    },
-    {
-        "x": 864,
-        "y": 816,
-        "width": 24,
-        "height": 12,
-        "id": 22,
-        "velocity": 100,
-        "isSelected": true
-    }
-];
+
   const selectedTrackId = 0;
   // const { isRhythmTrack } = useTrack(selectedTrackId)
   const isRhythmTrack = false; //TODO: receive from connector

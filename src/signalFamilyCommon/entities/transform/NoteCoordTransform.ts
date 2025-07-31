@@ -1,6 +1,6 @@
 // from app\src\entities\transform\NoteCoordTransform.ts
-import type { Point } from "../../VisualMidiSegment/entities/geometry/Point";
-import type { NoteEvent } from "../track/TrackEvent"
+import type { Point } from "../../../VisualMidiSegment/entities/geometry/Point";
+import type { NoteEvent } from "../../track/TrackEvent"
 import { KeyTransform } from "./KeyTransform"
 import type { NotePoint } from "./NotePoint"
 import { TickTransform } from "./TickTransform"

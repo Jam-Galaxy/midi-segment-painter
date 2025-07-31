@@ -25,4 +25,7 @@ type NoteEventContent = {
 }
 
 export type NoteEvent = TrackEventOf<NoteEventContent>
+export type TrackEvent = TrackEventOf<
+  NoteEventContent
+>
 

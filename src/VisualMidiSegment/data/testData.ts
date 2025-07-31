@@ -1,3 +1,5 @@
+import type { PianoNoteItem } from "../extras/types";
+
 export const testSerializedSong1 = {
     "tracks": [
         {
@@ -21995,3 +21997,51 @@ export const testSerializedSong2 = {
     "lastTrackId": 2,
     "isSaved": true
 }
+
+export const notes: Array<PianoNoteItem> = [
+    {
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 12,
+        "id": 20,
+        "velocity": 100,
+        "isSelected": false
+    },
+    {
+        "x": 12,
+        "y": 15,
+        "width": 24,
+        "height": 12,
+        "id": 19,
+        "velocity": 100,
+        "isSelected": false
+    },
+    {
+        "x": 600,
+        "y": 744,
+        "width": 24,
+        "height": 12,
+        "id": 18,
+        "velocity": 100,
+        "isSelected": false
+    },
+    {
+        "x": 840,
+        "y": 948,
+        "width": 24,
+        "height": 12,
+        "id": 21,
+        "velocity": 100,
+        "isSelected": false
+    },
+    {
+        "x": 864,
+        "y": 816,
+        "width": 24,
+        "height": 12,
+        "id": 22,
+        "velocity": 100,
+        "isSelected": true
+    }
+];
