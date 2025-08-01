@@ -4,7 +4,7 @@ import { PianoRollCanvas } from "./PianoRollCanvas/PianoRollCanvas";
 export const VisualMidiSegment: FC<object> = () => {
 return ( 
 <>
-  <PianoRollCanvas width={100} height={50} />
+  <PianoRollCanvas width={5000} height={5000} />
 </>
 )
 }
