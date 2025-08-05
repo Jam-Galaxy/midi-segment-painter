@@ -1,0 +1,17 @@
+{
+  "name": "@jam-galaxy/customized-tone",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
+  "main": "./build/lib.js",
+	"types": "./build/lib.d.ts",
+  "exports": {
+		".": {
+			"import": {
+				"types": "./build/lib.d.ts",
+				"default": "./build/lib.js"
+			}
+		}
+	}
+}

@@ -61,7 +61,7 @@ module.exports = ({context, browserMainImport} = {}) => {
         path: path.join(currentContext, "./.env"),
         systemvars: true,
       }),
-      new HtmlWebpackPlugin({
+      browserMainImport && new HtmlWebpackPlugin({
         inject: true,
         filename: "index.html",
         chunks: ["browserMain"],

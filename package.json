@@ -1,66 +1,51 @@
 {
-  "name": "signal",
-  "description": "A friendly music sequencer application for OS X and Windows.",
+  "name": "midi-segment-painter",
+  "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
+  "version": "1.0.0",
   "scripts": {
-    
     "start": "npm run start --prefix localLauncher",
-    "build": "webpack --config webpack.prod.js"
+    "build:webpack": "webpack --config webpack.prod.js",
+    "build:create-dist": "cpx \"build/**/*\" \"dist/build\" && node \"scripts/create-dist.mjs\"",
+    "build": "rimraf build && npm run build:webpack && rimraf dist && npm run build:create-dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryohey/signal.git"
-  },
-  "author": "ryohey",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ryohey/signal/issues"
-  },
-  "homepage": "https://github.com/ryohey/signal/",
-  "private": true,
   "dependencies": {
-    "@ryohey/webgl-react": "^0.6.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@ryohey/webgl-react": "^0.6.2",
+    "color": "^5.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "color": "^5.0.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "7.26.9",
     "@babel/preset-react": "7.26.3",
     "@babel/preset-typescript": "7.27.0",
-    
-    "lodash": "^4.17.21",
-    "@types/lodash": "^4.17.16",
     "@eslint/js": "^9.25.1",
-
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.16",
+    "@types/lodash": "^4.17.16",
     "@types/node": "22.15.2",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "@types/webpack-env": "1.18.8",
-
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.16",
-
     "@typescript-eslint/parser": "^8.31.0",
-    "fork-ts-checker-webpack-plugin": "9.1.0",
     "babel-loader": "^10.0.0",
     "babel-plugin-inline-react-svg": "^2.0.2",
     "babel-plugin-lodash": "^3.3.4",
     "copy-webpack-plugin": "^13.0.0",
+    "cpx": "^1.5.0",
     "dotenv-webpack": "^8.1.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
-
+    "fork-ts-checker-webpack-plugin": "9.1.0",
     "globals": "^16.0.0",
     "html-webpack-plugin": "^5.6.3",
-
+    "lodash": "^4.17.21",
     "prettier": "^3.5.3",
-
+    "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
-
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.0",
@@ -75,5 +60,18 @@
     "@pmmmwh/react-refresh-webpack-plugin": {
       "webpack-dev-server": "^5.2.1"
     }
+  },
+  "main": "./build/lib.js",
+  "types": "./build/lib.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./build/lib.d.ts",
+        "default": "./build/lib.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

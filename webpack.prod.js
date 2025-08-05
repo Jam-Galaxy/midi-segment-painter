@@ -3,7 +3,7 @@ const { merge } = require("webpack-merge")
 const common = require("./webpack.common.js")
 const CopyPlugin = require("copy-webpack-plugin")
 
-const PUBLIC_PATH = '/customized-signal/';
+const PUBLIC_PATH = '/midi-segment-painter/';
 
 module.exports = merge(common(), {
   mode: "production",
@@ -21,7 +21,7 @@ module.exports = merge(common(), {
     minimize: true,
   },
   output: {
-    path: path.resolve(__dirname, 'dist' + PUBLIC_PATH),
+    path: path.resolve(__dirname, 'build' + PUBLIC_PATH),
     publicPath: PUBLIC_PATH,
   },
   module: {
