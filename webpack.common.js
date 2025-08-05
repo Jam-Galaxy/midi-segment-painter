@@ -3,15 +3,26 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
 
-module.exports = ({context, browserMainImport} = {}) => {
-  const currentContext = context? context : __dirname;
-  return {
-    context: currentContext,
+function getEntry(browserMainImport) {
+  return browserMainImport ? {
     entry: {
       browserMain: { 
         import: browserMainImport ? browserMainImport : "./src/index.tsx",
       },
-    },
+    }
+  } : undefined;
+}
+
+module.exports = ({context, browserMainImport} = {}) => {
+  const currentContext = context? context : __dirname;
+  return {
+    context: currentContext,
+    ...getEntry(browserMainImport),
+    // entry: {
+    //   browserMain: { 
+    //     import: browserMainImport ? browserMainImport : "./src/index.tsx",
+    //   },
+    // },
     output: {
       filename: (pathData) => {
         if (pathData.chunk.name === 'lib') {
@@ -44,7 +55,7 @@ module.exports = ({context, browserMainImport} = {}) => {
     },
     plugins: [
       new Dotenv({
-        path: path.join(currentContext, "../.env"),
+        path: path.join(currentContext, "./.env"),
         systemvars: true,
       }),
       new HtmlWebpackPlugin({

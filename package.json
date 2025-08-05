@@ -2,7 +2,8 @@
   "name": "signal",
   "description": "A friendly music sequencer application for OS X and Windows.",
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
+    
+    "start": "npm run start --prefix localLauncher",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {

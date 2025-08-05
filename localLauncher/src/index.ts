@@ -1,10 +1,10 @@
 //@ts-ignore
-import { start } from "customized-signal";
-import Tone from "customized-tone";
+import { start } from "midi-segment-painter";
+// import Tone from "customized-tone";
 import EventEmitter from "wavesurfer.js/dist/event-emitter.js";
 import { ConnectorEventEmitter } from "./EventEmitter";
-const toneAudioContext = Tone.getContext();
-const audioContext = Tone.getContext().rawContext;
+// const toneAudioContext = Tone.getContext();
+// const audioContext = Tone.getContext().rawContext;
 const eventEmitter: ConnectorEventEmitter = new EventEmitter();
 
 function subscribeToEventsFromSignal() {
@@ -39,6 +39,6 @@ function subscribeToEventsFromSignal() {
     console.log("eventEmitter on signal-song-setSong-finished: song=", song);
   });
 }
-subscribeToEventsFromSignal();
+// subscribeToEventsFromSignal();
 
-start("root", toneAudioContext, audioContext, eventEmitter);
+start(document.getElementById("root"), eventEmitter);
