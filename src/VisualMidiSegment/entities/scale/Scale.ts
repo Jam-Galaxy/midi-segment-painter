@@ -1,1 +1,0 @@
-export * as Scale from "./ScaleInternal";

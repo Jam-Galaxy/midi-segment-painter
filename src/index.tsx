@@ -1,9 +1,6 @@
+
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import type { EventEmitter } from './signalFamilyCommon/studioConnector/EventEmitter.ts'
 
-export function start(elementRef: HTMLElement, eventEmitter: EventEmitter) {
-  createRoot(elementRef).render(<App eventEmitter={eventEmitter}/>)
-}
-
-
+createRoot(document.getElementById('root')!).render(<App eventEmitter={null as unknown as EventEmitter}/>)

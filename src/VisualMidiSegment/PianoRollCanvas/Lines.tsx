@@ -4,7 +4,7 @@ import Color from "color"
 import { useMemo } from "react";
 import type { FC } from "react";
 // import { Layout } from "../../../Constants"
-import { KeySignature } from "../entities/scale/KeySignature"
+import { KeySignature, keySignatureUtils } from "../entities/scale/KeySignature"
 import { colorToVec4 } from "../gl/color"
 // import { useKeyScroll } from "../../../hooks/useKeyScroll"
 // import { usePianoRoll } from "../../../hooks/usePianoRoll"
@@ -13,7 +13,7 @@ import { HorizontalGrid } from "./HorizontalGrid"
 // import { LegacyLines } from "./lagacy/LegacyLines"
 
 function keySignatureToConditions(keySignature: KeySignature) {
-  const intervals = KeySignature.getIntervals(keySignature)
+  const intervals = keySignatureUtils.getIntervals(keySignature)
   return new Array(12).fill(false).map((_, i) => intervals.includes(i % 12))
 }
 
@@ -63,7 +63,7 @@ const _Lines: FC<{ zIndex: number }> = ({ zIndex }) => {
         Array(12)
           .fill(0)
           .map((_, i) =>
-            KeySignature.getIntervals({ scale: "major", key: 0 }).includes(i)
+            keySignatureUtils.getIntervals({ scale: "major", key: 0 }).includes(i)
               ? whiteLaneColor
               : blackLaneColor,
           )

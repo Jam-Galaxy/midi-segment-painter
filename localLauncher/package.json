@@ -1,0 +1,12 @@
+{
+  "name": "midi-segment-painter-local-launcher",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js"
+  },
+  "dependencies": {
+    "midi-segment-painter": "file:../src/lib.ts",
+    "wavesurfer.js": "^7.9.9"
+  }
+}
