@@ -1,5 +1,5 @@
 import Color from "color"
-import { colorToVec4, enhanceContrast } from "../gl/color"
+import { colorToVec4, enhanceContrast } from "../../signalFamilyCommon/gl/color"
 // import { trackColorToCSSColor } from "../track/TrackColor"
 // import { usePianoRoll } from "./usePianoRoll"
 

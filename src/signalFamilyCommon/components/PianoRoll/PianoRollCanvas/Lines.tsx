@@ -4,8 +4,8 @@ import Color from "color"
 import { useMemo } from "react";
 import type { FC } from "react";
 // import { Layout } from "../../../Constants"
-import { KeySignature, keySignatureUtils } from "../entities/scale/KeySignature"
-import { colorToVec4 } from "../gl/color"
+import { KeySignature, keySignatureUtils } from "@/signalFamilyCommon/entities/scale/KeySignature"
+import { colorToVec4 } from "@/signalFamilyCommon/gl/color"
 // import { useKeyScroll } from "../../../hooks/useKeyScroll"
 // import { usePianoRoll } from "../../../hooks/usePianoRoll"
 // import { useTickScroll } from "../../../hooks/useTickScroll"

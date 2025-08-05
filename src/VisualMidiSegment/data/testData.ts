@@ -1,4 +1,4 @@
-import type { PianoNoteItem } from "../extras/types";
+import type { PianoNoteItem } from "@/signalFamilyCommon/stores/PianoRollStore";
 
 export const testSerializedSong1 = {
     "tracks": [

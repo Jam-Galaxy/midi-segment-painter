@@ -1,5 +1,6 @@
 import type { FC } from "react";
-import { PianoRollCanvas } from "./PianoRollCanvas/PianoRollCanvas";
+import { PianoRollCanvas } from "@/signalFamilyCommon/components/PianoRoll/PianoRollCanvas/PianoRollCanvas";
+// import 
 
 export const VisualMidiSegment: FC<object> = () => {
 return ( 

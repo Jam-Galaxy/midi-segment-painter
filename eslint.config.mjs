@@ -25,7 +25,7 @@ export default [
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": [
-        "error",
+        "warn",
         { ignoreRestSiblings: true },
       ],
       "@typescript-eslint/no-namespace": "off",

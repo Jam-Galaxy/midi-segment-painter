@@ -6,7 +6,7 @@ import {
   VertexArray,
 } from "@ryohey/webgl-react";
 import type {  InstancedBuffer } from "@ryohey/webgl-react"
-import type { Rect } from "../../entities/geometry/Rect"
+import type { Rect } from "@/signalFamilyCommon/entities/geometry/Rect"
 
 export interface INoteData {
   velocity: number

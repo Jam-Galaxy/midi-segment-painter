@@ -8,7 +8,7 @@ import {
 } from "@ryohey/webgl-react";
 import type {Buffer} from "@ryohey/webgl-react";
 import isEqual from "lodash/isEqual";
-import type { Rect } from "../../entities/geometry/Rect";
+import type { Rect } from "@/signalFamilyCommon/entities/geometry/Rect";
 
 export class HorizontalGridBuffer implements Buffer<Rect, "position"> {
   readonly vertexArray: VertexArray<"position">;

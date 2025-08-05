@@ -52,6 +52,9 @@ module.exports = ({context, browserMainImport} = {}) => {
     },
     resolve: {
       extensions: [".js", ".jsx", ".ts", ".tsx"],
+      alias:{
+        "@": path.resolve(__dirname, "./src"),
+      }
     },
     plugins: [
       new Dotenv({

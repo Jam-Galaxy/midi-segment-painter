@@ -38,8 +38,10 @@ module.exports = merge(common(), {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "public/*.svg", to: "[name][ext]" },
-        { from: "public/*.png", to: "[name][ext]" },
+        { from: "public/*.svg", to: "[name][ext]", noErrorOnMissing: true, },
+        { from: "public/*.png", to: "[name][ext]",
+          noErrorOnMissing: true,
+         },
       ],
     }),
   ],

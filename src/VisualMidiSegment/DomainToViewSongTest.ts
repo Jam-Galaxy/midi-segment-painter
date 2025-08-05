@@ -1,4 +1,4 @@
-import { deserialize } from "./connector/serializer";
+import { deserialize } from "./studioConnector/serializer";
 import { testSerializedSong1, testSerializedSong2 } from "./data/testData";
 import { domainToView } from "./DomainToViewSongMapper";
 

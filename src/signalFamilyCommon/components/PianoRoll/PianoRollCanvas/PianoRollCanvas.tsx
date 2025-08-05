@@ -8,7 +8,7 @@ import { mat4 } from "gl-matrix";
 import { GLCanvas, Transform } from "@ryohey/webgl-react"
 import { useCallback, useEffect, useMemo } from "react";
 import type { FC, MouseEventHandler } from "react"; 
-import { matrixFromTranslation } from "../helpers/matrix";
+import { matrixFromTranslation } from "@/signalFamilyCommon/helpers/matrix";
 
 
 // import { useKeyScroll } from "../../../hooks/useKeyScroll"

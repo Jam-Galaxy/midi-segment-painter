@@ -1,11 +1,11 @@
 import { GLNode, useProjectionMatrix } from "@ryohey/webgl-react"
 import { vec4 } from "gl-matrix"
 import type { FC } from "react"
-import type { Rect } from "../entities/geometry/Rect"
-import { DrumNoteShader } from "./shaders/DrumNoteShader"
+import type { Rect } from "@/signalFamilyCommon/entities/geometry/Rect"
+import { NoteShader } from "./shaders/NoteShader"
 import type { INoteData } from "./shaders/NoteShader"
 
-export interface NoteCirclesProps {
+export interface NoteRectanglesProps {
   rects: (Rect & INoteData)[]
   strokeColor: vec4
   inactiveColor: vec4
@@ -14,19 +14,19 @@ export interface NoteCirclesProps {
   zIndex?: number
 }
 
-export const NoteCircles: FC<NoteCirclesProps> = ({
+export const NoteRectangles: FC<NoteRectanglesProps> = ({
   rects,
   strokeColor,
-  selectedColor,
   inactiveColor,
   activeColor,
+  selectedColor,
   zIndex,
 }) => {
   const projectionMatrix = useProjectionMatrix()
 
   return (
     <GLNode
-      shader={DrumNoteShader}
+      shader={NoteShader}
       uniforms={{
         projectionMatrix,
         strokeColor,
