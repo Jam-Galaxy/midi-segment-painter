@@ -4,13 +4,13 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
-  "main": "./build/lib.js",
-	"types": "./build/lib.d.ts",
+  "main": "./build/midi-segment-painter/lib.js",
+	"types": "./build/midi-segment-painter/lib.d.ts",
   "exports": {
 		".": {
 			"import": {
-				"types": "./build/lib.d.ts",
-				"default": "./build/lib.js"
+				"types": "./build/midi-segment-painter/lib.d.ts",
+				"default": "./build/midi-segment-painter/lib.js"
 			}
 		}
 	}

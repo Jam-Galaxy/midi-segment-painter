@@ -1,12 +1,13 @@
 {
   "name": "@jam-galaxy/midi-segment-painter",
   "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "npm run start --prefix localLauncher",
+    "build:generate-type-declarations": "tsc --project tsconfig.production.json",
     "build:webpack": "webpack --config webpack.prod.js",
     "build:create-dist": "cpx \"build/**/*\" \"dist/build\" && node \"scripts/create-dist.mjs\"",
-    "build": "rimraf build && npm run build:webpack && rimraf dist && npm run build:create-dist"
+    "build": "rimraf build && npm run build:generate-type-declarations && npm run build:webpack && rimraf dist && npm run build:create-dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -61,13 +62,13 @@
       "webpack-dev-server": "^5.2.1"
     }
   },
-  "main": "./build/lib.js",
-  "types": "./build/lib.d.ts",
+  "main": "./build/midi-segment-painter/lib.js",
+  "types": "./build/midi-segment-painter/lib.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./build/lib.d.ts",
-        "default": "./build/lib.js"
+        "types": "./build/midi-segment-painter/lib.d.ts",
+        "default": "./build/midi-segment-painter/lib.js"
       }
     }
   },

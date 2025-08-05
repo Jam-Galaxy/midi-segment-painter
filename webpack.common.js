@@ -30,7 +30,7 @@ module.exports = ({context, browserMainImport} = {}) => {
         }
         return '[name]-[chunkhash].js';
       },
-      clean: true,
+      clean: false,
     },
     module: {
       rules: [
