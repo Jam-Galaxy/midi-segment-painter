@@ -1,5 +1,5 @@
 {
-  "name": "midi-segment-painter",
+  "name": "@jam-galaxy/midi-segment-painter",
   "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
   "version": "1.0.0",
   "scripts": {

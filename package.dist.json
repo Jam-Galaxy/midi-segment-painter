@@ -1,5 +1,5 @@
 {
-  "name": "@jam-galaxy/customized-tone",
+  "name": "@jam-galaxy/midi-segment-painter",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
