@@ -9,7 +9,7 @@ import { Lines } from "./Lines"
 import { Notes } from "./Notes"
 import { IViewSong } from "@/VisualMidiSegment/view/IViewSong";
 
-export const PianoRollCanvas: FC<{ width: number; height: number; song: IViewSong }> = ({ width, height, song }) => {
+export const PianoRollCanvas: FC<{ width: number; height: number; song: IViewSong | null }> = ({ width, height, song }) => {
   // const { setCanvasWidth } = useTickScroll()
   // const { setCanvasHeight } = useKeyScroll()
 
@@ -38,9 +38,9 @@ export const PianoRollCanvas: FC<{ width: number; height: number; song: IViewSon
         {/* <Transform matrix={scrollYMatrix}> */}
           <Lines zIndex={0} />
         {/* </Transform> */}
-        <Transform matrix={scrollXYMatrix}>
+        { song && <Transform matrix={scrollXYMatrix}>
           <Notes song={song} zIndex={3}  />
-        </Transform>
+        </Transform> }
       </GLCanvas>
     </>
   )

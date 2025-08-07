@@ -4,11 +4,11 @@ import { useSongContext } from "../hooks/useSong";
 // import 
 
 export const VisualMidiSegment: FC<object> = () => {
-  const {song} = useSongContext();
+  const {song, width, height} = useSongContext();
   console.log("VisualMidiSegment: song=", song);
 return ( 
 <>
-  {song? <PianoRollCanvas width={5000} height={5000} song={song} /> : null}
+  <PianoRollCanvas width={500} height={300} song={song} />
 </>
 )
 }

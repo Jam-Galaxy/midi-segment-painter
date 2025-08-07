@@ -1,4 +1,3 @@
-//@ts-ignore
 import { start } from "midi-segment-painter";
 // import Tone from "customized-tone";
 import EventEmitter from "wavesurfer.js/dist/event-emitter.js";
@@ -23,4 +22,6 @@ function subscribeToEventsFromSignal() {
 }
 subscribeToEventsFromSignal();
 
-start(document.getElementById("root"), eventEmitter);
+const rootElement = document.getElementById("root")
+if(!rootElement) throw new Error;
+start(rootElement, eventEmitter);

@@ -6,7 +6,7 @@
     "start": "webpack serve --config webpack.dev.js"
   },
   "dependencies": {
-    "midi-segment-painter": "file:../src/lib.ts",
+    "midi-segment-painter": "file:../src/lib.tsx",
     "wavesurfer.js": "^7.9.9"
   }
 }
