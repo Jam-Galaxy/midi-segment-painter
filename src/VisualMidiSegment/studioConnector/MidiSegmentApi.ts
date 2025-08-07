@@ -9,13 +9,17 @@ import { deserialize } from "./serializer";
 import { domainToView } from "../view/DomainToViewSongMapper";
 import { IViewSong } from "../view/IViewSong";
 import { useSongContext } from "../hooks/useSong";
+// import { debounce } from "@/utils/miscellaneous";
+import { debounce } from "lodash";
+import { DEBOUNCE_DELAY } from "@/data/config";
 
 export interface ConnectorEventEmitter {
   test: string
 }
 
 export interface MidiSegmentApi {
-  setSerializedSong: (serializedSong: ISerializedSong) => void
+  setSerializedSong: (serializedSong: ISerializedSong) => void;
+  setSerializedSongDebounced: (serializedSong: ISerializedSong) => void;
 }
 
 export function useCreateSignalApi(): MidiSegmentApi {
@@ -28,10 +32,12 @@ export function useCreateSignalApi(): MidiSegmentApi {
     
     const viewSongFromMapper: IViewSong = domainToView(song);
     
-    setSong(viewSongFromMapper);
+    setSong(viewSongFromMapper);    
   }
+  const setSerializedSongDebounced = debounce(setSerializedSong, DEBOUNCE_DELAY);
 
   return {
     setSerializedSong,
+    setSerializedSongDebounced,
   }
 }

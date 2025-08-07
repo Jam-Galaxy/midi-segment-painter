@@ -37,7 +37,8 @@ export interface ISerializedSong {
 
 
 export interface MidiSegmentApi {
-  setSerializedSong: (serializedSong: ISerializedSong) => void
+  setSerializedSong: (serializedSong: ISerializedSong) => void;
+  setSerializedSongDebounced: (serializedSong: ISerializedSong) => void;
 }
 
 type Events = {

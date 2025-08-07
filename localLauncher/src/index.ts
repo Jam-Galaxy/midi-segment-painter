@@ -11,7 +11,14 @@ const eventEmitter: ConnectorEventEmitter = new EventEmitter();
 function subscribeToEventsFromSignal() {
   eventEmitter.on("midi-segment-api-ready", ({midiSegmentApi}) => {
     console.log("eventEmitter on midi-segment-api-ready: midiSegmentApi=", midiSegmentApi);
-    midiSegmentApi.setSerializedSong(testSerializedSong2);
+    // midiSegmentApi.setSerializedSong(testSerializedSong1);
+
+    midiSegmentApi.setSerializedSongDebounced(testSerializedSong1);
+    midiSegmentApi.setSerializedSongDebounced(testSerializedSong2);
+
+    // setTimeout(() => {
+    //   midiSegmentApi.setSerializedSong(testSerializedSong2);
+    // }, 2000);
   });
 }
 subscribeToEventsFromSignal();
