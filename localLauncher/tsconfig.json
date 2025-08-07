@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "midi-segment-painter": ["./src/lib.tsx"]
+      "@jam-galaxy/midi-segment-painter": ["./src/lib.tsx"]
     }
   },
   "include": ["src/**/*"]

@@ -7,7 +7,7 @@ const merged = merge(appWebpackDevConfig({context: path.resolve(__dirname, "../"
   // entry: "./example/index.ts",
   resolve: {
     alias: {
-      "midi-segment-painter": path.resolve(__dirname, "../src/lib.tsx"),
+      "@jam-galaxy/midi-segment-painter": path.resolve(__dirname, "../src/lib.tsx"),
     },
   },
 })

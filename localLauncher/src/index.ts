@@ -1,4 +1,4 @@
-import { start } from "midi-segment-painter";
+import { start } from "@jam-galaxy/midi-segment-painter";
 // import Tone from "customized-tone";
 import EventEmitter from "wavesurfer.js/dist/event-emitter.js";
 import { ConnectorEventEmitter } from "./EventEmitter";
