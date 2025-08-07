@@ -8,7 +8,7 @@ export const VisualMidiSegment: FC<object> = () => {
   console.log("VisualMidiSegment: song=", song);
 return ( 
 <>
-  <PianoRollCanvas width={500} height={300} song={song} />
+  <PianoRollCanvas width={width} height={height} song={song} />
 </>
 )
 }

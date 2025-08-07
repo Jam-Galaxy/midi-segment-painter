@@ -20,10 +20,12 @@ export interface ConnectorEventEmitter {
 export interface MidiSegmentApi {
   setSerializedSong: (serializedSong: ISerializedSong) => void;
   setSerializedSongDebounced: (serializedSong: ISerializedSong) => void;
+  setWidth: (width: number) => void;
+  setHeight: (height: number) => void;
 }
 
 export function useCreateSignalApi(): MidiSegmentApi {
-  const {setSong} = useSongContext();
+  const {setSong, setWidth, setHeight} = useSongContext();
 
   const setSerializedSong = (serializedSong: ISerializedSong) => {
     console.log("setSerializedSongHelper: serializedSong=", serializedSong);
@@ -39,5 +41,7 @@ export function useCreateSignalApi(): MidiSegmentApi {
   return {
     setSerializedSong,
     setSerializedSongDebounced,
+    setWidth,
+    setHeight
   }
 }

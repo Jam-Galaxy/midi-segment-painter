@@ -1,7 +1,7 @@
 import { start } from "midi-segment-painter";
 // import Tone from "customized-tone";
 import EventEmitter from "wavesurfer.js/dist/event-emitter.js";
-import { ConnectorEventEmitter, ISerializedSong } from "./EventEmitter";
+import { ConnectorEventEmitter } from "./EventEmitter";
 import { testSerializedSong1, testSerializedSong2 } from "./data/testData";
 // const toneAudioContext = Tone.getContext();
 // const audioContext = Tone.getContext().rawContext;
@@ -14,10 +14,13 @@ function subscribeToEventsFromSignal() {
 
     midiSegmentApi.setSerializedSongDebounced(testSerializedSong1);
     midiSegmentApi.setSerializedSongDebounced(testSerializedSong2);
+    midiSegmentApi.setWidth(1000);
+    midiSegmentApi.setHeight(400);
 
     // setTimeout(() => {
     //   midiSegmentApi.setSerializedSong(testSerializedSong2);
-    // }, 2000);
+      // midiSegmentApi.setHeight(400);
+  // }, 2000);
   });
 }
 subscribeToEventsFromSignal();
