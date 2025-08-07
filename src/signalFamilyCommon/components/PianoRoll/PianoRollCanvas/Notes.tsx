@@ -11,20 +11,23 @@ import type { Rect } from "@/signalFamilyCommon/entities/geometry/IRect"
 import type { INoteData } from "./shaders/NoteShader"
 import type { PianoNoteItem } from "@/signalFamilyCommon/stores/PianoRollStore"
 import { domainToViewSongTest } from "@/VisualMidiSegment/DomainToViewSongTest"
+import { IViewSong } from "@/VisualMidiSegment/view/IViewSong"
 // import { LegacyNotes } from "./lagacy/LegacyNotes"
 
 export interface NotesProps {
-  zIndex: number
+  zIndex: number;
+  song: IViewSong;
 }
 
 export const Notes: FC<NotesProps> = (props) => {
   return <GLFallback component={_Notes} fallback={_Notes} {...props} />
 }
 
-const _Notes: FC<{ zIndex: number }> = ({ zIndex }) => {
+const _Notes: FC<{ zIndex: number; song: IViewSong }> = ({ zIndex, song }) => {
 
 
-  const notes = domainToViewSongTest();
+  // const notes = domainToViewSongTest();
+  const notes = song;
 
   // const { notes, selectedTrackId } = usePianoRoll();
 

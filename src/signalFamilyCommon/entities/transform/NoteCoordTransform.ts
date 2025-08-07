@@ -1,5 +1,6 @@
 // from app\src\entities\transform\NoteCoordTransform.ts
 import type { Point } from "../geometry/Point";
+import type { Rect } from "../geometry/Rect";
 import type { NoteEvent } from "../../track/TrackEvent"
 import { KeyTransform } from "./KeyTransform"
 import type { NotePoint } from "./NotePoint"
@@ -55,11 +56,11 @@ export class NoteCoordTransform {
 
   //
 
-  getMaxY() {
+  getMaxY(): number {
     return this.keyTransform.getMaxY()
   }
 
-  getRect(note: NoteEvent) {
+  getRect(note: NoteEvent): Rect {
     return {
       x: this.getX(note.tick),
       y: this.getY(note.noteNumber),
@@ -68,7 +69,7 @@ export class NoteCoordTransform {
     }
   }
 
-  getDrumRect(note: NoteEvent) {
+  getDrumRect(note: NoteEvent): Rect {
     return {
       x: this.getX(note.tick) - this.keyTransform.pixelsPerKey / 2,
       y: this.getY(note.noteNumber),

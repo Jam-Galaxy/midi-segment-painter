@@ -1,12 +1,13 @@
 //pieces of code from PianoRollStore
-import { NoteCoordTransform } from "../signalFamilyCommon/entities/transform/NoteCoordTransform"
-import type { NoteEvent } from "../signalFamilyCommon/track/TrackEvent"
-import { TickTransform } from "../signalFamilyCommon/entities/transform/TickTransform";
-import { Layout } from "../signalFamilyCommon/Constants";
-import { KeyTransform } from "../signalFamilyCommon/entities/transform/KeyTransform";
-import { isNoteEvent, type TrackId } from "../signalFamilyCommon/track";
+import { NoteCoordTransform } from "../../signalFamilyCommon/entities/transform/NoteCoordTransform"
+import type { NoteEvent } from "../../signalFamilyCommon/track/TrackEvent"
+import { TickTransform } from "../../signalFamilyCommon/entities/transform/TickTransform";
+import { Layout } from "../../signalFamilyCommon/Constants";
+import { KeyTransform } from "../../signalFamilyCommon/entities/transform/KeyTransform";
+import { isNoteEvent, type TrackId } from "../../signalFamilyCommon/track";
 
-import Song from "../signalFamilyCommon/song/Song";
+import Song from "../../signalFamilyCommon/song/Song";
+import { IViewSong } from "./IViewSong";
 
 function getTickScrollStoreTransform() {
   const scaleX = 1;
@@ -51,27 +52,10 @@ function getAllNoteBounds(song: Song) {
       }
     })
 }
-export function domainToView(song: Song) { //TODO: song type is SerializeObjectProperties<Song> see serializr
+export function domainToView(song: Song): IViewSong { //TODO: song type is SerializeObjectProperties<Song> see serializr
     // const { allNoteBounds } = 
     const allNoteBounds = getAllNoteBounds(song);
     console.log("allNoteBounds=", allNoteBounds);
-
-    // const { canvasWidth, scrollLeft } = this.tickScrollStore
-
-    // const range = Range.fromLength(scrollLeft, canvasWidth)
-    // return allNoteBounds
-    //   .filter((n) =>
-    //     Range.intersects(Range.fromLength(n.bounds.x, n.bounds.width), range),
-    //   )
-    //   .map((n) => {
-    //     const isSelected = selectedNoteIds.includes(n.note.id)
-    //     return {
-    //       ...n.bounds,
-    //       id: n.note.id,
-    //       velocity: n.note.velocity,
-    //       isSelected,
-    //     }
-    //   })
 
     return allNoteBounds.map((n) => {
       return {

@@ -10,7 +10,6 @@ export function EventEmitterProvider({ children, value}: { children: React.React
   )
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useEventEmitter() {
   const eventEmitter = useContext(EventEmitterContext);
   return eventEmitter;
