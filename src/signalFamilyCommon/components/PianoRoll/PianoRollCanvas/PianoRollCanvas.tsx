@@ -32,7 +32,7 @@ export const PianoRollCanvas: FC<{ width: number; height: number; song: IViewSon
         style={{
           border: "1px solid red",
           // background: theme.pianoWhiteKeyLaneColor,
-          background: "green"
+          // background: "green"
         }}
       >
         {/* <Transform matrix={scrollYMatrix}> */}

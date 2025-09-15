@@ -2,7 +2,7 @@ import { start } from "@jam-galaxy/midi-segment-painter";
 // import Tone from "customized-tone";
 import EventEmitter from "wavesurfer.js/dist/event-emitter.js";
 import { ConnectorEventEmitter } from "./EventEmitter";
-import { testSerializedSong1, testSerializedSong2 } from "./data/testData";
+import { testSerializedSong1, testSerializedSong2, testSegment } from "./data/testData";
 // const toneAudioContext = Tone.getContext();
 // const audioContext = Tone.getContext().rawContext;
 const eventEmitter: ConnectorEventEmitter = new EventEmitter();
@@ -12,10 +12,15 @@ function subscribeToEventsFromSignal() {
     console.log("eventEmitter on midi-segment-api-ready: midiSegmentApi=", midiSegmentApi);
     // midiSegmentApi.setSerializedSong(testSerializedSong1);
 
-    midiSegmentApi.setSerializedSongDebounced(testSerializedSong1);
-    midiSegmentApi.setSerializedSongDebounced(testSerializedSong2);
-    midiSegmentApi.setWidth(1000);
-    midiSegmentApi.setHeight(400);
+    // midiSegmentApi.setSerializedSongDebounced(testSerializedSong1);
+    // midiSegmentApi.setSerializedSongDebounced(testSerializedSong2);
+    const segmentHeight = 500; //px
+    const transformProperties = {
+      segmentHeight
+    }
+    midiSegmentApi.setSegment(testSegment, transformProperties);
+    midiSegmentApi.setWidth(500);
+    midiSegmentApi.setHeight(segmentHeight);
 
     // setTimeout(() => {
     //   midiSegmentApi.setSerializedSong(testSerializedSong2);

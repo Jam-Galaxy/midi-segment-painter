@@ -1,7 +1,7 @@
 {
   "name": "@jam-galaxy/midi-segment-painter",
   "description": "Application for displaying midi-segments on canvas. Similar to Wavesurfer, but only for midi.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "start": "npm run start --prefix localLauncher",
     "build:generate-type-declarations": "tsc --project tsconfig.production.json",

@@ -15,7 +15,8 @@ function getTickScrollStoreTransform() {
 }
 function getKeyScrollStoreTransform() {
   const scaleY = 1;
-  return new KeyTransform(Layout.keyHeight * scaleY, 127)
+  const segmentHeight = 100;
+  return new KeyTransform(segmentHeight, Layout.keyHeight * scaleY, 127)
 }
 
 function getTransform() {
@@ -34,35 +35,36 @@ function getTrack(song: Song) {
   return track;
 }
 
-function getAllNoteBounds(song: Song) {
-    // const { transform, selectedTrack: track } = this
-    const transform = getTransform();
-    const track = getTrack(song);
+// function getAllNoteBounds(song: Song) {
+//     // const { transform, selectedTrack: track } = this
+//     const transform = getTransform();
+//     const track = getTrack(song);
 
-    const noteEvents = track.events.filter(isNoteEvent)
-    const getRect = track.isRhythmTrack
-      ? (e: NoteEvent) => transform.getDrumRect(e)
-      : (e: NoteEvent) => transform.getRect(e)
+//     const noteEvents = track.events.filter(isNoteEvent)
+//     const getRect = track.isRhythmTrack
+//       ? (e: NoteEvent) => transform.getDrumRect(e)
+//       : (e: NoteEvent) => transform.getRect(e)
 
-    return noteEvents.map((e) => {
-      const bounds = getRect(e)
-      return {
-        bounds,
-        note: e,
-      }
-    })
-}
-export function domainToView(song: Song): IViewSong { //TODO: song type is SerializeObjectProperties<Song> see serializr
+//     return noteEvents.map((e) => {
+//       const bounds = getRect(e)
+//       return {
+//         bounds,
+//         note: e,
+//       }
+//     })
+// }
+// export function domainToView(song: Song): IViewSong { //TODO: song type is SerializeObjectProperties<Song> see serializr
     // const { allNoteBounds } = 
-    const allNoteBounds = getAllNoteBounds(song);
-    console.log("allNoteBounds=", allNoteBounds);
+    // const allNoteBounds = getAllNoteBounds(song);
+    // console.log("allNoteBounds=", allNoteBounds);
 
-    return allNoteBounds.map((n) => {
-      return {
-        ...n.bounds,
-        id: n.note.id,
-        velocity: n.note.velocity,
-        isSelected: false,
-      }
-    })
-}
+    // return allNoteBounds.map((n) => {
+    //   return {
+    //     ...n.bounds,
+    //     id: n.note.id,
+    //     velocity: n.note.velocity,
+    //     isSelected: false,
+    //   }
+    // })
+// }
+

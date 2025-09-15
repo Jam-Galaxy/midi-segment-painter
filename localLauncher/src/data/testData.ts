@@ -1,4 +1,342 @@
-
+export const testSegment = {
+    "id": "testUserId-1757940948560-flgwhh",
+    "name": "School Piano 1",
+    "endOfTrack": 1536,
+    "channel": 0,
+    "isRhythmTrack": false,
+    "events": [
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 70,
+            "velocity": 100,
+            "tick": 0,
+            "id": 0,
+            "duration": 144
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 42,
+            "velocity": 100,
+            "tick": 0,
+            "id": 4,
+            "duration": 384
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 61,
+            "velocity": 100,
+            "tick": 0,
+            "id": 5,
+            "duration": 384
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 54,
+            "velocity": 100,
+            "tick": 0,
+            "id": 6,
+            "duration": 384
+        },
+        {
+            "type": "meta",
+            "subtype": "trackName",
+            "text": "School Piano 1",
+            "tick": 0
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 144,
+            "id": 1,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 168,
+            "id": 2,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 192,
+            "id": 3,
+            "duration": 96
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 288,
+            "id": 7,
+            "duration": 144
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 44,
+            "velocity": 100,
+            "tick": 384,
+            "id": 15,
+            "duration": 384
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 63,
+            "velocity": 100,
+            "tick": 384,
+            "id": 16,
+            "duration": 384
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 56,
+            "velocity": 100,
+            "tick": 384,
+            "id": 17,
+            "duration": 384
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 432,
+            "id": 8,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 70,
+            "velocity": 100,
+            "tick": 456,
+            "id": 9,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 68,
+            "velocity": 100,
+            "tick": 480,
+            "id": 10,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 68,
+            "velocity": 100,
+            "tick": 528,
+            "id": 11,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 576,
+            "id": 12,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 624,
+            "id": 13,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 672,
+            "id": 14,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 720,
+            "id": 18,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 70,
+            "velocity": 100,
+            "tick": 768,
+            "id": 19,
+            "duration": 144
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 65,
+            "velocity": 100,
+            "tick": 768,
+            "id": 27,
+            "duration": 576
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 46,
+            "velocity": 100,
+            "tick": 768,
+            "id": 32,
+            "duration": 768
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 58,
+            "velocity": 100,
+            "tick": 768,
+            "id": 33,
+            "duration": 768
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 912,
+            "id": 20,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 936,
+            "id": 21,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 960,
+            "id": 22,
+            "duration": 96
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 1056,
+            "id": 23,
+            "duration": 144
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 1200,
+            "id": 24,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 1224,
+            "id": 25,
+            "duration": 24
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 78,
+            "velocity": 100,
+            "tick": 1248,
+            "id": 26,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 78,
+            "velocity": 100,
+            "tick": 1296,
+            "id": 28,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 1344,
+            "id": 29,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 66,
+            "velocity": 100,
+            "tick": 1344,
+            "id": 34,
+            "duration": 192
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 72,
+            "velocity": 100,
+            "tick": 1392,
+            "id": 30,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 1440,
+            "id": 31,
+            "duration": 48
+        },
+        {
+            "type": "channel",
+            "subtype": "note",
+            "noteNumber": 73,
+            "velocity": 100,
+            "tick": 1488,
+            "id": 35,
+            "duration": 48
+        }
+    ]
+}
 export const testSerializedSong1 = {
     "tracks": [
         {

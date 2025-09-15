@@ -5,6 +5,7 @@ import type { NoteEvent } from "../../track/TrackEvent"
 import { KeyTransform } from "./KeyTransform"
 import type { NotePoint } from "./NotePoint"
 import { TickTransform } from "./TickTransform"
+import { IInputTransformProperties } from "@/VisualMidiSegment/studioConnector/IInputSegment";
 
 export class NoteCoordTransform {
   private readonly tickTransform: TickTransform;
@@ -24,8 +25,8 @@ export class NoteCoordTransform {
     return this.tickTransform.getX(tick)
   }
 
-  getY(noteNumber: number) {
-    return this.keyTransform.getY(noteNumber)
+  getY(noteNumber: number, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties) {
+    return this.keyTransform.getY(noteNumber, minNoteNumber, maxNoteNumber, transformProperties)
   }
 
   // ticks
@@ -60,19 +61,19 @@ export class NoteCoordTransform {
     return this.keyTransform.getMaxY()
   }
 
-  getRect(note: NoteEvent): Rect {
+  getRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties): Rect {
     return {
       x: this.getX(note.tick),
-      y: this.getY(note.noteNumber),
+      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber, transformProperties),
       width: this.getX(note.duration),
-      height: this.keyTransform.pixelsPerKey,
+      height: this.keyTransform.getPixelsPerKey(minNoteNumber, maxNoteNumber, transformProperties),
     }
   }
 
-  getDrumRect(note: NoteEvent): Rect {
+  getDrumRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties): Rect {
     return {
       x: this.getX(note.tick) - this.keyTransform.pixelsPerKey / 2,
-      y: this.getY(note.noteNumber),
+      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber, transformProperties),
       width: this.keyTransform.pixelsPerKey,
       height: this.keyTransform.pixelsPerKey,
     }

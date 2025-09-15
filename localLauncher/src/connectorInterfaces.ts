@@ -25,10 +25,14 @@ interface ISerializedTrack {
 export interface ISerializedSong {
   tracks: Array<ISerializedTrack>
 }
+ 
+interface IInputSegment {};
+interface IInputTransformProperties {};
 
 export interface MidiSegmentApi {
   setSerializedSong: (serializedSong: ISerializedSong) => void;
   setSerializedSongDebounced: (serializedSong: ISerializedSong) => void;
+  setSegment: (segment: IInputSegment, transformProperties: IInputTransformProperties) => void;
   setWidth: (width: number) => void;
   setHeight: (height: number) => void;
 }
