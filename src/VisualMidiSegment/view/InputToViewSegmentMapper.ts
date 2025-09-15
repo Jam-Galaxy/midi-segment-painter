@@ -25,9 +25,10 @@ function getTransform() {
     )
 }
 
-function getAllNoteBounds(segment: IInputSegment, transformProperties: IInputTransformProperties) {
+function getAllNoteBounds(segment: IInputSegment, noteCoordTransform: NoteCoordTransform) {
     // const { transform, selectedTrack: track } = this
-    const transform = getTransform();
+    // const transform = getTransform();
+    const transform = noteCoordTransform; 
 
     const noteEvents = segment.events.filter(isNoteEvent);
     const maxNoteNumber = noteEvents.reduce((p, c) => {
@@ -38,8 +39,8 @@ function getAllNoteBounds(segment: IInputSegment, transformProperties: IInputTra
     }, Number.POSITIVE_INFINITY);
 
     const getRect = segment.isRhythmTrack
-      ? (e: NoteEvent) => transform.getDrumRect(e, minNoteNumber, maxNoteNumber, transformProperties)
-      : (e: NoteEvent) => transform.getRect(e, minNoteNumber, maxNoteNumber, transformProperties)
+      ? (e: NoteEvent) => transform.getDrumRect(e, minNoteNumber, maxNoteNumber)
+      : (e: NoteEvent) => transform.getRect(e, minNoteNumber, maxNoteNumber);
 
     return noteEvents.map((e) => {
       const bounds = getRect(e)
@@ -50,9 +51,8 @@ function getAllNoteBounds(segment: IInputSegment, transformProperties: IInputTra
     })
 }
 
-export function inputToViewSegment(segment: IInputSegment, transformProperties: IInputTransformProperties): IViewSegment { //TODO: song type is SerializeObjectProperties<Song> see serializr
-    // const { allNoteBounds } = 
-    const allNoteBounds = getAllNoteBounds(segment, transformProperties);
+export function inputToViewSegment(segment: IInputSegment, noteCoordTransform: NoteCoordTransform): IViewSegment { //TODO: song type is SerializeObjectProperties<Song> see serializr
+    const allNoteBounds = getAllNoteBounds(segment, noteCoordTransform);
     console.log("allNoteBounds=", allNoteBounds);
 
     return allNoteBounds.map((n) => {

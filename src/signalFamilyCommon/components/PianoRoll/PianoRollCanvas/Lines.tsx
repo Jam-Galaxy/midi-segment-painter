@@ -22,8 +22,8 @@ export interface LinesProps {
 }
 
 export const Lines: FC<LinesProps> = (props) => {
-  // return <GLFallback component={_Lines} fallback={LegacyLines} {...props} />
-  return <>Lines fallback</>
+  return <GLFallback component={_Lines} fallback={_Lines} {...props} />
+  // return <>Lines fallback</>
 }
 
 const theme = {

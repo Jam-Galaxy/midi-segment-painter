@@ -1,5 +1,5 @@
 export class TickTransform {
-  private readonly pixelsPerTick: number;
+  public pixelsPerTick: number;
   constructor(pixelsPerTick: number) {
     this.pixelsPerTick = pixelsPerTick;
   }

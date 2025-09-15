@@ -1,7 +1,7 @@
 import { IInputTransformProperties } from "@/VisualMidiSegment/studioConnector/IInputSegment";
 
 export class KeyTransform {
-   segmentHeight: number;
+  public segmentHeight: number;
   readonly pixelsPerKey: number;
   private readonly maxNoteNumber: number;
   constructor(
@@ -14,13 +14,13 @@ export class KeyTransform {
     this.maxNoteNumber = maxNoteNumber;
   }
 
-  getPixelsPerKey(minNoteNumber:number, maxNoteNumber: number, transformProperties: IInputTransformProperties) {
-    return transformProperties.segmentHeight / (maxNoteNumber - minNoteNumber);
+  getPixelsPerKey(minNoteNumber:number, maxNoteNumber: number) {
+    return this.segmentHeight / (maxNoteNumber - minNoteNumber);
   }
 
-  getY(noteNumber: number, minNoteNumber:number, maxNoteNumber: number, transformProperties: IInputTransformProperties) {
+  getY(noteNumber: number, minNoteNumber:number, maxNoteNumber: number) {
     // return (this.maxNoteNumber - noteNumber) * this.pixelsPerKey
-    return (noteNumber - minNoteNumber) / (maxNoteNumber - minNoteNumber) * transformProperties.segmentHeight
+    return (1-(noteNumber - minNoteNumber) / (maxNoteNumber - minNoteNumber)) * this.segmentHeight
     
   }
 

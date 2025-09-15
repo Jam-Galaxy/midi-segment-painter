@@ -14,13 +14,24 @@ function subscribeToEventsFromSignal() {
 
     // midiSegmentApi.setSerializedSongDebounced(testSerializedSong1);
     // midiSegmentApi.setSerializedSongDebounced(testSerializedSong2);
+
     const segmentHeight = 500; //px
-    const transformProperties = {
-      segmentHeight
-    }
-    midiSegmentApi.setSegment(testSegment, transformProperties);
+
+    midiSegmentApi.setTransforms({
+      segmentHeight: segmentHeight,
+      pixelsPerTick: 0.01,
+    });
+
+    midiSegmentApi.setSegment(testSegment);
     midiSegmentApi.setWidth(500);
     midiSegmentApi.setHeight(segmentHeight);
+
+    setTimeout(() => {
+    midiSegmentApi.setTransforms({
+      segmentHeight: 100,
+      pixelsPerTick: 0.1,
+    });
+    }, 3000);
 
     // setTimeout(() => {
     //   midiSegmentApi.setSerializedSong(testSerializedSong2);

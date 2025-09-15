@@ -8,8 +8,8 @@ import { TickTransform } from "./TickTransform"
 import { IInputTransformProperties } from "@/VisualMidiSegment/studioConnector/IInputSegment";
 
 export class NoteCoordTransform {
-  private readonly tickTransform: TickTransform;
-  private readonly keyTransform: KeyTransform;
+  public readonly tickTransform: TickTransform;
+  public readonly keyTransform: KeyTransform;
 
   constructor(
     tickTransform: TickTransform,
@@ -25,8 +25,8 @@ export class NoteCoordTransform {
     return this.tickTransform.getX(tick)
   }
 
-  getY(noteNumber: number, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties) {
-    return this.keyTransform.getY(noteNumber, minNoteNumber, maxNoteNumber, transformProperties)
+  getY(noteNumber: number, minNoteNumber: number, maxNoteNumber: number) {
+    return this.keyTransform.getY(noteNumber, minNoteNumber, maxNoteNumber)
   }
 
   // ticks
@@ -61,19 +61,19 @@ export class NoteCoordTransform {
     return this.keyTransform.getMaxY()
   }
 
-  getRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties): Rect {
+  getRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number): Rect {
     return {
       x: this.getX(note.tick),
-      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber, transformProperties),
+      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber),
       width: this.getX(note.duration),
-      height: this.keyTransform.getPixelsPerKey(minNoteNumber, maxNoteNumber, transformProperties),
+      height: this.keyTransform.getPixelsPerKey(minNoteNumber, maxNoteNumber),
     }
   }
 
-  getDrumRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number, transformProperties: IInputTransformProperties): Rect {
+  getDrumRect(note: NoteEvent, minNoteNumber: number, maxNoteNumber: number): Rect {
     return {
       x: this.getX(note.tick) - this.keyTransform.pixelsPerKey / 2,
-      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber, transformProperties),
+      y: this.getY(note.noteNumber, minNoteNumber, maxNoteNumber),
       width: this.keyTransform.pixelsPerKey,
       height: this.keyTransform.pixelsPerKey,
     }

@@ -22,6 +22,7 @@ export const PianoRollCanvas: FC<{ width: number; height: number; song: IViewSon
   // }, [height])
 
   const scrollXYMatrix = mat4.create();
+  const scaleMatrix = mat4.create();
 
   // console.log("scrollXYMatrix=", scrollXYMatrix);
   return (

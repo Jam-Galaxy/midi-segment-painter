@@ -28,11 +28,16 @@ export interface ISerializedSong {
  
 interface IInputSegment {};
 interface IInputTransformProperties {};
+interface Transforms {
+  pixelsPerTick: number,
+  segmentHeight: number,
+};
 
 export interface MidiSegmentApi {
   setSerializedSong: (serializedSong: ISerializedSong) => void;
   setSerializedSongDebounced: (serializedSong: ISerializedSong) => void;
-  setSegment: (segment: IInputSegment, transformProperties: IInputTransformProperties) => void;
+  setSegment: (segment: IInputSegment) => void;
+  setTransforms: (transforms: Partial<Transforms>) => void;
   setWidth: (width: number) => void;
   setHeight: (height: number) => void;
 }
