@@ -7,7 +7,7 @@ export const StudioConnector: FC = () => {
   const midiSegmentApi = useCreateSignalApi();
 
   useEffect(() => {
-    console.log("StudioConnector: useEffect: eventEmitter=", eventEmitter, "midiSegmentApi=", midiSegmentApi);
+    // console.log("StudioConnector: useEffect: eventEmitter=", eventEmitter, "midiSegmentApi=", midiSegmentApi);
     eventEmitter['emit']("midi-segment-api-ready", {midiSegmentApi});
   }, []);
   return <></>

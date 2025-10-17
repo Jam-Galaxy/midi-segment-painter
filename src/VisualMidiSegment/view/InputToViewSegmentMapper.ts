@@ -33,11 +33,10 @@ function getAllNoteBounds(segment: IInputSegment, noteCoordTransform: NoteCoordT
     const noteEvents = segment.events.filter(isNoteEvent);
     const maxNoteNumber = noteEvents.reduce((p, c) => {
       return Math.max(p, c.noteNumber);
-    }, Number.NEGATIVE_INFINITY)+1;
+    }, Number.NEGATIVE_INFINITY);
     const minNoteNumber = noteEvents.reduce((p, c) => {
       return Math.min(p, c.noteNumber);
-    }, Number.POSITIVE_INFINITY);
-
+    }, Number.POSITIVE_INFINITY)-1;
     const getRect = segment.isRhythmTrack
       ? (e: NoteEvent) => transform.getDrumRect(e, minNoteNumber, maxNoteNumber)
       : (e: NoteEvent) => transform.getRect(e, minNoteNumber, maxNoteNumber);
@@ -53,7 +52,7 @@ function getAllNoteBounds(segment: IInputSegment, noteCoordTransform: NoteCoordT
 
 export function inputToViewSegment(segment: IInputSegment, noteCoordTransform: NoteCoordTransform): IViewSegment { //TODO: song type is SerializeObjectProperties<Song> see serializr
     const allNoteBounds = getAllNoteBounds(segment, noteCoordTransform);
-    console.log("allNoteBounds=", allNoteBounds);
+    // console.log("allNoteBounds=", allNoteBounds);
 
     return allNoteBounds.map((n) => {
       return {

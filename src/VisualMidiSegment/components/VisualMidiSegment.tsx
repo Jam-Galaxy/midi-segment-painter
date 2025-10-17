@@ -5,7 +5,7 @@ import { useSongContext } from "../hooks/useSong";
 
 export const VisualMidiSegment: FC<object> = () => {
   const {song, width, height, viewSegment} = useSongContext();
-  console.log("VisualMidiSegment: song=", song);
+  // console.log("VisualMidiSegment: song=", song);
 return ( 
 <>
   {/* <PianoRollCanvas width={width} height={height} song={song} /> */}

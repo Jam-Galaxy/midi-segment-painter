@@ -38,7 +38,7 @@ const _Notes: FC<{ zIndex: number; song: IViewSong }> = ({ zIndex, song }) => {
   const testColor = colorToVec4(new Color("hsl(230, 70%, 55%)"));
   const borderColor= testColor, inactiveColor = testColor, activeColor= testColor, selectedColor= testColor;
 
-  console.log("Notes: notes=", notes);
+  // console.log("Notes: notes=", notes);
 
   return (
     <>

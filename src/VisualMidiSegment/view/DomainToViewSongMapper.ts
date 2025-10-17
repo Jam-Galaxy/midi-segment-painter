@@ -29,7 +29,7 @@ function getTransform() {
 }
 function getTrack(song: Song) {
   // const song = new Song();
-  console.log(song);
+  // console.log(song);
   const track = song.getTrack(1 as TrackId);
   if(!track) throw new Error;
   return track;

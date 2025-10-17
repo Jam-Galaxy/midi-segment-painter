@@ -52,7 +52,7 @@ export function useCreateSignalApi(): MidiSegmentApi {
   }, [transforms, inputSegment]);
 
   const setSerializedSong = (serializedSong: ISerializedSong) => {
-    console.log("setSerializedSongHelper: serializedSong=", serializedSong);
+    // console.log("setSerializedSongHelper: serializedSong=", serializedSong);
     // serializedSong = testSerializedSong1; //TODO: remove
     const song = deserialize(serializedSong);
     
@@ -69,7 +69,7 @@ export function useCreateSignalApi(): MidiSegmentApi {
     // setSegmentContext(viewSegment);
   }
   const setTransforms = (inputTransforms: Partial<Transforms>) => {
-    console.log("api: setTransforms: inputTransforms=", inputTransforms, "transforms=", transforms);
+    // console.log("api: setTransforms: inputTransforms=", inputTransforms, "transforms=", transforms);
     // const newTransforms = {
     //   ...transforms,
     //   ...inputTransforms,
