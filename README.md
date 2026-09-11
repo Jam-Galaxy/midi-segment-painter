@@ -1,4 +1,6 @@
-This is modified version of .
+> **Status: archived.** A MIDI timeline component built for the Jam Galaxy browser studio. Developed July 2025 to October 2025. Jam Galaxy is no longer active and this code is not maintained. It is published as-is so the work is readable and reusable.
+
+This component is derived from the MIDI-track rendering code in [signal](https://github.com/ryohey/signal) by ryohey, used under the MIT licence.
 
 This application is designed to display midi tracks as segments on the daw workspace. In this regard, it is similar to [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js/). It is based on the code for displaying a midi track in [signal](https://signal.vercel.app)
 
