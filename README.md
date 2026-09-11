@@ -1,4 +1,4 @@
-> **Status: archived.** A MIDI timeline component built for the Jam Galaxy browser studio. Developed July 2025 to October 2025. Jam Galaxy is no longer active and this code is not maintained. It is published as-is so the work is readable and reusable.
+> A MIDI timeline component built for the Jam Galaxy browser studio in 2025. Open source under MIT. No longer under active development.
 
 This component is derived from the MIDI-track rendering code in [signal](https://github.com/ryohey/signal) by ryohey, used under the MIT licence.
 
